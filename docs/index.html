@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mr.Chicken Linz | Loudest Crunch in Town – Broasted Chicken, Shawarma &amp; Burger</title>
+  <meta name="description"
+    content="Mr.Chicken in Linz: Knuspriges Broasted Chicken, saftige Zinger Burger, aromatischer Shawarma Teller und frische Falafel. Wiener Straße 91, 4020 Linz. Jetzt anrufen &amp; abholen!">
+
+  <!-- Favicon / Touch Icon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍗</text></svg>">
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            outfit: ['Outfit', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              red: '#DC2626',      // energetic warm red
+              redDark: '#991B1B',
+              orange: '#F97316',   // appetizing crunchy amber/orange
+              amber: '#F59E0B',
+              yellow: '#FACC15',
+              dark: '#0C0D11',     // rich dark background
+              card: '#16181F',     // elevated card surface
+              cardHover: '#1E212B',
+              border: '#2A2D3A'
+            }
+          },
+          boxShadow: {
+            'glow-orange': '0 0 25px -5px rgba(249, 115, 22, 0.4)',
+            'glow-red': '0 0 25px -5px rgba(220, 38, 38, 0.4)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom subtle animations */
+    @keyframes pulseGlow {
+
+      0%,
+      100% {
+        opacity: 0.9;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.02);
+      }
+    }
+
+    .animate-pulse-glow {
+      animation: pulseGlow 2.8s infinite ease-in-out;
+    }
+
+    /* Smooth scroll margin for fixed anchors */
+    section {
+      scroll-margin-top: 80px;
+    }
+  </style>
+
+  <!-- JSON-LD SEO Schema for Gastronomy -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FastFoodRestaurant",
+    "name": "Mr.Chicken",
+    "image": "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=1200&q=80",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Wiener Straße 91",
+      "addressLocality": "Linz",
+      "postalCode": "4020",
+      "addressCountry": "AT"
+    },
+    "telephone": "+436604449897",
+    "servesCuisine": ["Broasted Chicken", "Shawarma", "Burger", "Halal", "Falafel"],
+    "priceRange": "€€",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "11:00",
+        "closes": "22:00"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body
+  class="bg-[#0C0D11] text-stone-100 font-sans antialiased selection:bg-brand-orange selection:text-white pb-28 md:pb-8">
+
+  <!-- Top Announcement Bar -->
+  <div
+    class="bg-gradient-to-r from-brand-red via-brand-orange to-brand-amber text-white text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide py-1.5 px-3 text-center shadow-md flex items-center justify-center gap-1.5">
+    <span class="inline-block w-2 h-2 rounded-full bg-white animate-ping shrink-0"></span>
+    <span class="truncate sm:overflow-visible">🔥 Jetzt geöffnet in Linz: Wiener Straße 91 • Vorbestellen &amp; direkt
+      abholen!</span>
+  </div>
+
+  <!-- Navigation / Brand Header -->
+  <header class="sticky top-0 z-40 bg-[#0C0D11]/90 backdrop-blur-md border-b border-brand-border/60 transition-all">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 md:h-20 flex items-center justify-between">
+      <!-- Logo & Slogan -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div
+          class="w-11 h-11 md:w-12 md:h-12 rounded-2xl bg-gradient-to-br from-brand-orange to-brand-red flex items-center justify-center shadow-glow-orange text-2xl group-hover:scale-105 transition-transform duration-300">
+          🍗
+        </div>
+        <div class="flex flex-col">
+          <span class="font-outfit font-black text-xl md:text-2xl tracking-tight text-white leading-none">
+            Mr.<span class="text-brand-orange">Chicken</span>
+          </span>
+          <span class="text-[10px] md:text-xs font-semibold text-brand-amber uppercase tracking-wider mt-0.5">
+            Loudest Crunch in Town
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav & Quick Call -->
+      <div class="hidden md:flex items-center gap-6">
+        <nav class="flex items-center gap-5 text-sm font-medium text-stone-300">
+          <a href="#hero" class="hover:text-brand-orange transition-colors">Start</a>
+          <a href="#menu" class="hover:text-brand-orange transition-colors">Bestseller</a>
+          <a href="#kontakt" class="hover:text-brand-orange transition-colors">Kontakt &amp; Anfahrt</a>
+          <a href="#zeiten" class="hover:text-brand-orange transition-colors">Öffnungszeiten</a>
+        </nav>
+        <a href="tel:+436604449897"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-800 hover:bg-stone-700 text-stone-200 border border-brand-border text-sm font-semibold hover:border-brand-orange/50 transition-all shadow-sm">
+          <svg class="w-4 h-4 text-brand-orange" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.22 2.09z" />
+          </svg>
+          <span>0660 4449897</span>
+        </a>
+      </div>
+
+      <!-- Mobile Direct Call Icon -->
+      <a href="tel:+436604449897" aria-label="Jetzt anrufen"
+        class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-brand-orange text-white shadow-glow-orange active:scale-95 transition-transform">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.22 2.09z" />
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative overflow-hidden pt-6 pb-12 md:py-20">
+    <!-- Ambient Background Glows -->
+    <div
+      class="absolute top-10 left-1/2 -translate-x-1/2 w-80 md:w-[600px] h-80 md:h-[450px] bg-brand-orange/15 rounded-full blur-[100px] pointer-events-none -z-10">
+    </div>
+    <div class="absolute top-40 right-10 w-64 h-64 bg-brand-red/10 rounded-full blur-[80px] pointer-events-none -z-10">
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+        <!-- Left Column: Content & Call To Action -->
+        <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+
+          <!-- Quality Tag Badge -->
+          <div
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-card border border-brand-border text-brand-amber text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-brand-orange"></span>
+            Linz • Wiener Straße 91
+          </div>
+
+          <!-- Main Headline -->
+          <h1
+            class="font-outfit font-black text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.08] mb-4">
+            Der lauteste <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-brand-amber to-yellow-400">Crunch</span>
+            in Linz!
+          </h1>
+
+          <!-- Slogan & Subtext -->
+          <p class="text-stone-300 text-base sm:text-lg max-w-xl mb-6 font-normal leading-relaxed">
+            <strong class="text-white font-semibold">Mr.Chicken</strong> bringt Ihnen unvergleichlich knuspriges
+            Broasted Chicken, saftig gewürztes Shawarma, herzhafte Burger und frische Falafel – heiß serviert &amp; voller
+            Geschmack.
+          </p>
+
+          <!-- Core Value Badges (Frisch, Halal, Abholung) -->
+          <div
+            class="w-full max-w-lg bg-stone-900/60 backdrop-blur border border-brand-border/80 rounded-2xl p-3.5 mb-7">
+            <div
+              class="flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-4 text-xs sm:text-sm font-medium text-stone-200">
+              <span class="inline-flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                Frisch zubereitet
+              </span>
+              <span class="text-stone-600 hidden sm:inline">•</span>
+              <span class="inline-flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                100% Halal
+              </span>
+              <span class="text-stone-600 hidden sm:inline">•</span>
+              <span class="inline-flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                Abholung &amp; Vorbestellung
+              </span>
+            </div>
+          </div>
+
+          <!-- Prominent Call To Action Button -->
+          <div class="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-4">
+            <a href="tel:+436604449897" id="hero-cta-call"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-brand-red via-brand-orange to-brand-orange hover:from-brand-redDark hover:to-brand-orange text-white font-outfit font-bold text-lg shadow-glow-orange hover:shadow-glow-red hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 animate-pulse-glow">
+              <div class="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.22 2.09z" />
+                </svg>
+              </div>
+              <div class="flex flex-col text-left leading-tight">
+                <span>Jetzt anrufen &amp; abholen</span>
+                <span class="text-xs text-amber-200 font-sans font-normal">+43 660 4449897</span>
+              </div>
+            </a>
+
+            <a href="#menu"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-stone-900/80 hover:bg-stone-800 text-stone-200 hover:text-white border border-brand-border font-semibold text-sm transition-all duration-200">
+              <span>Bestseller ansehen</span>
+              <svg class="w-4 h-4 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+          </div>
+
+          <p class="text-stone-400 text-xs mt-3.5">
+            ⚡ Blitzschnell vorbereitet: Bestellen Sie telefonisch vor und holen Sie Ihre Speisen ohne Wartezeit ab.
+          </p>
+
+        </div>
+
+        <!-- Right Column: Visual Hero Image Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Image Card Wrapper with glow border -->
+            <div
+              class="relative rounded-3xl overflow-hidden border border-brand-orange/30 shadow-2xl bg-brand-card group">
+              <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                alt="Knuspriges Broasted Chicken von Mr.Chicken Linz"
+                class="w-full h-72 sm:h-84 md:h-96 object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                loading="eager">
+              <!-- Gradient Vignette -->
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-85">
+              </div>
+
+              <!-- Floating Highlight Badge over Image -->
+              <div
+                class="absolute bottom-4 left-4 right-4 bg-brand-dark/85 backdrop-blur-md p-3.5 rounded-2xl border border-white/10 flex items-center justify-between">
+                <div>
+                  <div class="flex items-center gap-1.5 text-brand-amber font-bold text-xs uppercase tracking-wide">
+                    <span>★ ★ ★ ★ ★</span>
+                    <span class="text-stone-300 font-normal">Original Broasting</span>
+                  </div>
+                  <p class="font-outfit font-extrabold text-white text-base">Echter Crunch. Pure Saftigkeit.</p>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs text-stone-400 block">Abholbereit in</span>
+                  <span class="text-brand-orange font-bold text-sm">ca. 15 Min.</span>
+                </div>
+              </div>
+
+              <!-- Top Floating Badge -->
+              <div
+                class="absolute top-4 right-4 bg-brand-red text-white font-outfit font-black text-xs px-3 py-1.5 rounded-full shadow-lg uppercase tracking-wider">
+                100% Halal
+              </div>
+            </div>
+
+            <!-- Decorative background accents -->
+            <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-brand-amber/20 rounded-full blur-2xl -z-10"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Speisekarten-Auszug (4 Bestseller Teaser) -->
+  <section id="menu" class="py-14 bg-[#111319] border-y border-brand-border/60 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs font-bold uppercase tracking-wider mb-2.5">
+          Speisekarten-Auszug
+        </div>
+        <h2 class="font-outfit font-black text-3xl sm:text-4xl text-white tracking-tight">
+          Unsere beliebtesten <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-amber">Bestseller</span>
+        </h2>
+        <p class="text-stone-400 text-sm sm:text-base mt-2">
+          Vier Favoriten unserer Gäste – täglich frisch zubereitet mit ausgewählten Gewürzen und bestem Fleisch.
+        </p>
+      </div>
+
+      <!-- 4 Bestseller Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+
+        <!-- Dish 1: Broasted Chicken -->
+        <article
+          class="bg-brand-card rounded-3xl border border-brand-border/80 overflow-hidden hover:border-brand-orange/50 transition-all duration-300 hover:shadow-xl group flex flex-col justify-between">
+          <div>
+            <div class="relative h-56 sm:h-64 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                alt="Broasted Chicken - Knusprig frittiertes Hähnchen Mr.Chicken Linz"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+              <span
+                class="absolute top-4 left-4 bg-brand-red text-white text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                Bestseller #1
+              </span>
+              <span
+                class="absolute bottom-4 right-4 bg-brand-dark/90 backdrop-blur text-brand-amber font-outfit font-extrabold text-lg px-3.5 py-1 rounded-xl border border-white/10 shadow">
+                ab 12,00 €
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3
+                  class="font-outfit font-bold text-xl sm:text-2xl text-white group-hover:text-brand-orange transition-colors">
+                  Broasted Chicken
+                </h3>
+              </div>
+              <p class="text-stone-300 text-sm leading-relaxed mb-4">
+                Knusprig frittiertes Hähnchen nach speziellem Hausrezept. Im Hochdruckverfahren frittiert: außen extrem
+                crunchy &amp; goldbraun, innen wunderbar saftig und zart.
+              </p>
+              <div class="flex flex-wrap items-center gap-2 text-xs text-stone-400">
+                <span class="bg-stone-800/80 px-2.5 py-1 rounded-lg border border-brand-border">Inkl. Dip</span>
+                <span class="bg-stone-800/80 px-2.5 py-1 rounded-lg border border-brand-border">Hausgewürzt</span>
+                <span class="bg-stone-800/80 px-2.5 py-1 rounded-lg border border-brand-border">100% Halal</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0">
+            <a href="tel:+436604449897"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-stone-800/90 hover:bg-brand-orange text-stone-200 hover:text-white font-semibold text-sm transition-all border border-brand-border hover:border-brand-orange">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.22 2.09z" />
+              </svg>
+              <span>Broasted Chicken vorbestellen</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Dish 2: Zinger Burger Menü -->
+        <article
+          class="bg-brand-card rounded-3xl border border-brand-border/80 overflow-hidden hover:border-brand-orange/50 transition-all duration-300 hover:shadow-xl group flex flex-col justify-between">
+          <div>
+            <div class="relative h-56 sm:h-64 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                alt="Zinger Burger Menü mit Pommes und Dip Mr.Chicken Linz"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+              <span
+                class="absolute top-4 left-4 bg-brand-orange text-white text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                Menü-Hit
+              </span>
+              <span
+                class="absolute bottom-4 right-4 bg-brand-dark/90 backdrop-blur text-brand-amber font-outfit font-extrabold text-lg px-3.5 py-1 rounded-xl border border-white/10 shadow">
+                13,00 €
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3
+                  class="font-outfit font-bold text-xl sm:text-2xl text-white group-hover:text-brand-orange transition-colors">
+                  Zinger Burger Menü
+                </h3>
+              </div>
+              <p class="text-stone-300 text-sm leading-relaxed mb-4">
+                Crispy Chicken Burger mit goldbraunem Hähnchenfilet, geschmolzenem Cheddar, knackigem Salat &amp; würziger
+                Spezialsauce im Brioche-Bun – inklusive knusprigen Pommes &amp; Dip.
+              </p>
+              <div class="flex flex-wrap items-center gap-2 text-xs text-stone-400">
+                <span class="bg-stone-800/80 px-2.5 py-1 rounded-lg border border-brand-border">Inkl. Pommes</span>
+                <span class="bg-stone-800/80 px-2.5 py-1 rounded-lg border border-brand-border">Inkl. Sauce</span>
+                <span class="bg-stone-800/80 px-2.5 py-1 rounded-lg border border-brand-border">Brioche Bun</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0">
+            <a href="tel:+436604449897"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-stone-800/90 hover:bg-brand-orange text-stone-200 hover:text-white font-semibold text-sm transition-all border border-brand-border hover:border-brand-orange">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.22 2.09z" />
+              </svg>
+              <span>Zinger Burger bestellen</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Dish 3: Shawarma Teller -->
+        <article
+          class="bg-brand-card rounded-3xl border border-brand-border/80 overflow-hidden hover:border-brand-orange/50 transition-all duration-300 hover:shadow-xl group flex flex-col justify-between">
+          <div>
+            <div class="relative h-56 sm:h-64 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                alt="Shawarma Teller mit Fleisch, Fladenbrot und Knoblauchsauce Mr.Chicken Linz"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+              <span
+                class="absolute top-4 left-4 bg-amber-600 text-white text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                Traditionell
+              </span>
+              <span
+                class="absolute bottom-4 right-4 bg-brand-dark/90 backdrop-blur text-brand-amber font-outfit font-extrabold text-lg px-3.5 py-1 rounded-xl border border-white/10 shadow">
+                8,00 €
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3
+                  class="font-outfit font-bold text-xl sm:text-2xl text-white group-hover:text-brand-orange transition-colors">
+                  Shawarma Teller
+                </h3>
+              </div>
+              <p class="text-stone-300 text-sm leading-relaxed mb-4">
+                Zartes, perfekt mariniertes Fleisch nach orientalischer Art, serviert mit feinem Fladenbrot,
+                gegrilltem Gemüse, frischem Salat und hausgemachter cremiger Knoblauchsauce.
+              </p>
+              <div class="flex flex-wrap items-center gap-2 text-xs text-stone-400">
+                <span class="bg-stone-800/80 px-2.5 py-1 rounded-lg border border-brand-border">Zartes Fleisch</span>
+                <span class="bg-stone-800/80 px-2.5 py-1 rounded-lg border border-brand-border">Knoblauchsauce</span>
+                <span class="bg-stone-800/80 px-2.5 py-1 rounded-lg border border-brand-border">Frischer Salat</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0">
+            <a href="tel:+436604449897"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-stone-800/90 hover:bg-brand-orange text-stone-200 hover:text-white font-semibold text-sm transition-all border border-brand-border hover:border-brand-orange">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.22 2.09z" />
+              </svg>
+              <span>Shawarma vorbestellen</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Dish 4: Falafel Box -->
+        <article
+          class="bg-brand-card rounded-3xl border border-brand-border/80 overflow-hidden hover:border-brand-orange/50 transition-all duration-300 hover:shadow-xl group flex flex-col justify-between">
+          <div>
+            <div class="relative h-56 sm:h-64 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1680990999782-ba7fe26e4d0b?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                alt="Falafel Box mit Hummus und Kichererbsen Mr.Chicken Linz"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+              <span
+                class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                Vegetarisch
+              </span>
+              <span
+                class="absolute bottom-4 right-4 bg-brand-dark/90 backdrop-blur text-brand-amber font-outfit font-extrabold text-lg px-3.5 py-1 rounded-xl border border-white/10 shadow">
+                8,00 €
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3
+                  class="font-outfit font-bold text-xl sm:text-2xl text-white group-hover:text-brand-orange transition-colors">
+                  Falafel Box
+                </h3>
+              </div>
+              <p class="text-stone-300 text-sm leading-relaxed mb-4">
+                5 frisch und kross ausgebackene Falafelbällchen mit Kichererbsen &amp; feinen Gartenkräutern, serviert mit
+                cremigem Hummus, feiner Sesamsauce und ofenfrischem Fladenbrot.
+              </p>
+              <div class="flex flex-wrap items-center gap-2 text-xs text-stone-400">
+                <span class="bg-stone-800/80 px-2.5 py-1 rounded-lg border border-brand-border">5 Stück</span>
+                <span class="bg-stone-800/80 px-2.5 py-1 rounded-lg border border-brand-border">Samtiger Hummus</span>
+                <span class="bg-stone-800/80 px-2.5 py-1 rounded-lg border border-brand-border">Warmes Fladenbrot</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0">
+            <a href="tel:+436604449897"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-stone-800/90 hover:bg-brand-orange text-stone-200 hover:text-white font-semibold text-sm transition-all border border-brand-border hover:border-brand-orange">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.22 2.09z" />
+              </svg>
+              <span>Falafel Box vorbestellen</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Menu Footer Note -->
+      <div
+        class="mt-10 p-5 sm:p-6 rounded-2xl bg-brand-card border border-brand-border text-center max-w-2xl mx-auto shadow-sm">
+        <div class="flex items-center justify-center gap-2 text-brand-amber font-semibold text-sm mb-1.5">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>Weitere Spezialitäten &amp; Beilagen</span>
+        </div>
+        <p class="text-stone-300 text-sm">
+          <strong>Vollständige Speisekarte vor Ort &amp; telefonisch erfragbar.</strong> Wir bieten zusätzlich verschiedene
+          Chicken Wings, Crunch Tenders, Menüs, frische Saucen und gekühlte Getränke.
+        </p>
+        <div class="mt-4">
+          <a href="tel:+436604449897"
+            class="inline-flex items-center gap-2 text-brand-orange hover:text-brand-amber font-semibold text-sm transition-colors">
+            <span>Fragen zur Karte? Rufen Sie uns an: +43 660 4449897</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 3: Kontakt & Anfahrt -->
+  <section id="kontakt" class="py-14 max-w-6xl mx-auto px-4 sm:px-6">
+
+    <!-- Section Title -->
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/10 border border-brand-red/20 text-brand-orange text-xs font-bold uppercase tracking-wider mb-2.5">
+        Standort &amp; Abholung
+      </div>
+      <h2 class="font-outfit font-black text-3xl sm:text-4xl text-white tracking-tight">
+        Kontakt &amp; <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-amber">Anfahrt</span>
+      </h2>
+      <p class="text-stone-400 text-sm sm:text-base mt-2">
+        Zentral gelegen an der Wiener Straße in Linz. Einfach erreichbar und ideal zum Abholen.
+      </p>
+    </div>
+
+    <!-- Contact & Directions Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+
+      <!-- Address & Map Card -->
+      <div
+        class="md:col-span-6 bg-brand-card rounded-3xl border border-brand-border p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <!-- Icon & Title -->
+          <div class="flex items-center gap-3.5 mb-5">
+            <div
+              class="w-12 h-12 rounded-2xl bg-brand-orange/15 border border-brand-orange/30 flex items-center justify-center text-brand-orange">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div>
+              <span class="text-xs uppercase font-bold text-brand-amber tracking-wider">Adresse</span>
+              <h3 class="font-outfit font-bold text-2xl text-white">Hier finden Sie uns</h3>
+            </div>
+          </div>
+
+          <!-- Street & City -->
+          <div class="bg-stone-900/80 rounded-2xl p-5 border border-brand-border/60 mb-6">
+            <p class="font-outfit font-extrabold text-xl text-white">Mr.Chicken</p>
+            <p class="text-stone-300 text-base mt-1">Wiener Straße 91</p>
+            <p class="text-stone-400 text-sm">4020 Linz, Oberösterreich</p>
+            <div class="mt-3 pt-3 border-t border-stone-800 flex items-center gap-2 text-xs text-stone-400">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              Gute Parkmöglichkeiten für schnelle Abholung
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Maps Button -->
+        <a href="https://maps.google.com/?q=Wiener+Stra%C3%9Fe+91,+4020+Linz" target="_blank" rel="noopener noreferrer"
+          id="btn-google-maps"
+          class="w-full inline-flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-stone-800 hover:bg-stone-700 text-white font-semibold text-sm border border-brand-border hover:border-brand-orange transition-all shadow-md group">
+          <svg class="w-5 h-5 text-brand-orange group-hover:scale-110 transition-transform" fill="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5 2.5z" />
+          </svg>
+          <span>In Google Maps öffnen</span>
+          <svg class="w-4 h-4 text-stone-400 group-hover:translate-x-1 transition-transform" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Phone & Opening Hours Card -->
+      <div class="md:col-span-6 flex flex-col gap-6">
+
+        <!-- Large Phone CTA Card -->
+        <div
+          class="bg-gradient-to-br from-brand-card to-stone-900 rounded-3xl border border-brand-orange/40 p-6 sm:p-7 shadow-glow-orange/20 relative overflow-hidden">
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-3">
+              <span
+                class="text-xs uppercase font-black text-brand-orange tracking-wider bg-brand-orange/15 px-3 py-1 rounded-full border border-brand-orange/30">
+                Telefonische Bestellung
+              </span>
+              <span class="flex h-2.5 w-2.5 relative">
+                <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              </span>
+            </div>
+
+            <p class="text-stone-300 text-sm mb-1">Rufen Sie uns direkt an:</p>
+            <a href="tel:+436604449897"
+              class="block font-outfit font-black text-2xl sm:text-3xl text-white hover:text-brand-orange transition-colors tracking-tight mb-4">
+              +43 660 4449897
+            </a>
+
+            <a href="tel:+436604449897" id="contact-btn-call"
+              class="w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-2xl bg-brand-orange hover:bg-brand-red text-white font-outfit font-bold text-base shadow-glow-orange transition-all duration-200">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.22 2.09z" />
+              </svg>
+              <span>Jetzt anrufen &amp; vorbestellen</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Opening Hours Box (Platzhalter) -->
+        <div id="zeiten" class="bg-brand-card rounded-3xl border border-brand-border p-6 sm:p-7 flex-1">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-xl bg-stone-800 flex items-center justify-center text-brand-amber">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <span class="text-xs uppercase font-bold text-stone-400 tracking-wider">Vorläufig</span>
+              <h4 class="font-outfit font-bold text-lg text-white">Öffnungszeiten</h4>
+            </div>
+          </div>
+
+          <!-- Schedule List -->
+          <div class="space-y-2.5 text-sm">
+            <div class="flex items-center justify-between py-1.5 border-b border-brand-border/40">
+              <span class="text-stone-300 font-medium">Dienstag – Sonntag</span>
+              <span class="font-bold text-white bg-stone-800/80 px-2.5 py-0.5 rounded-md border border-brand-border/60">
+                11:00 – 22:00 Uhr
+              </span>
+            </div>
+            <div class="flex items-center justify-between py-1.5 border-b border-brand-border/40">
+              <span class="text-stone-400 font-medium">Montag</span>
+              <span class="text-brand-orange font-semibold">Ruhetag</span>
+            </div>
+          </div>
+
+          <p class="text-stone-400 text-xs mt-3.5 flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-stone-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Vorläufige Zeiten (Platzhalter für den Web-Entwurf).
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Google Maps / OpenStreetMap Embed Preview Box (Ohne X-Frame-Options Blockade) -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 mb-12">
+    <div class="rounded-3xl overflow-hidden border border-brand-border bg-brand-card p-2 shadow-lg">
+      <div
+        class="relative w-full h-64 sm:h-80 rounded-2xl overflow-hidden bg-stone-900 flex items-center justify-center">
+        <!-- OpenStreetMap Embed: Garantiert frei von X-Frame-Options-Einschränkungen -->
+        <iframe title="Mr.Chicken Standort Wiener Straße 91 Linz" width="100%" height="100%"
+          style="border:0; filter: invert(90%) hue-rotate(180deg) contrast(90%);" loading="lazy"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=14.2880%2C48.2790%2C14.3120%2C48.2930&amp;layer=mapnik&amp;marker=48.2862%2C14.3004"
+          class="w-full h-full opacity-85"></iframe>
+
+        <!-- Overlay Pin Badge & Direct Google Maps Navigation -->
+        <div
+          class="absolute bottom-4 left-4 right-4 sm:right-auto bg-brand-dark/95 backdrop-blur-md p-4 rounded-2xl border border-brand-orange/40 shadow-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-brand-orange flex items-center justify-center text-white text-lg shrink-0 shadow-glow-orange">
+              📍
+            </div>
+            <div>
+              <div class="font-outfit font-bold text-white text-sm">Mr.Chicken Linz</div>
+              <div class="text-xs text-stone-300">Wiener Straße 91 • 4020 Linz</div>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Wiener+Stra%C3%9Fe+91,+4020+Linz" target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-800 hover:bg-brand-orange text-white text-xs font-semibold border border-brand-border hover:border-brand-orange transition-all">
+            <span>Route in Google Maps</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Minimal Footer -->
+  <footer class="bg-black/90 border-t border-brand-border/60 py-8 text-stone-400 text-xs">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+      <div class="flex items-center gap-2">
+        <span class="text-base">🍗</span>
+        <span class="font-outfit font-bold text-white text-sm">Mr.Chicken</span>
+        <span class="text-stone-500">•</span>
+        <span>Loudest Crunch in Town</span>
+      </div>
+      <p class="text-stone-400">
+        Wiener Straße 91, 4020 Linz • Tel: <a href="tel:+436604449897"
+          class="text-stone-200 hover:text-brand-orange transition-colors font-medium">+43 660 4449897</a>
+      </p>
+      <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-stone-500">
+        <span>© 2026 Mr.Chicken Linz • Vorläufiges Designkonzept</span>
+        <div class="flex items-center gap-3">
+          <a href="#kontakt" class="hover:text-stone-300 transition-colors underline-offset-2 hover:underline">Impressum</a>
+          <span class="text-stone-700">•</span>
+          <a href="#kontakt" class="hover:text-stone-300 transition-colors underline-offset-2 hover:underline">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile Action Bar (Always visible on Smartphone screens) -->
+  <div
+    class="md:hidden fixed bottom-0 left-0 right-0 z-50 p-3 bg-[#0C0D11]/95 backdrop-blur-lg border-t border-brand-border/80 shadow-2xl">
+    <div class="flex items-center gap-2.5 max-w-md mx-auto">
+
+      <!-- Primary Big Call Button (ohne animate-bounce für ruhiges, stabiles Design) -->
+      <a href="tel:+436604449897" id="mobile-sticky-call"
+        class="flex-1 inline-flex items-center justify-center gap-2.5 py-3.5 px-4 rounded-xl bg-gradient-to-r from-brand-red to-brand-orange active:scale-[0.98] text-white font-outfit font-bold text-base shadow-glow-orange transition-all">
+        <svg class="w-5 h-5 text-white shrink-0" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.22 2.09z" />
+        </svg>
+        <span>Jetzt anrufen &amp; abholen</span>
+      </a>
+
+      <!-- Quick Maps Icon Button -->
+      <a href="https://maps.google.com/?q=Wiener+Stra%C3%9Fe+91,+4020+Linz" target="_blank" rel="noopener noreferrer"
+        aria-label="Route in Google Maps planen"
+        class="w-12 h-12 shrink-0 rounded-xl bg-stone-800 border border-brand-border flex items-center justify-center text-brand-orange active:scale-95 transition-transform">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      </a>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
